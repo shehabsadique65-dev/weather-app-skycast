@@ -13,7 +13,7 @@ const settingsRoutes = require('./routes/settings');
 const errorHandler = require('./middleware/errorHandler');
 const app = express();
 app.use(helmet());
-app.use(cors({ origin: process.env.NODE_ENV === 'production' ? process.env.CLIENT_ORIGIN : [/http:\/\/localhost:\d+/], credentials: true }));
+app.use(cors({ origin: ['https://shehab-skycast.vercel.app', 'http://localhost:5173'], credentials: true }));
 app.use(express.json());
 app.use(morgan(process.env.NODE_ENV === 'development' ? 'dev' : 'combined'));
 const limiter = rateLimit({
