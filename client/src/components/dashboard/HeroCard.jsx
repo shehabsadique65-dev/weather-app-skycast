@@ -16,7 +16,7 @@ const HeroCard = ({ data }) => {
 
   const localTime = useMemo(() => {
     if (!data) return '';
-    const unix = Math.floor(now.getTime() / 1000) - (now.getTimezoneOffset() * 60);
+    const unix = Math.floor(now.getTime() / 1000);
     return formatTime(unix, data.timezone, timeFormat);
   }, [now, data, timeFormat]);
 
